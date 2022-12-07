@@ -45,6 +45,7 @@ public class HibernateDatabaseConnection {
                 Metadata metadata = sources.getMetadataBuilder().build();
 
                 sessionFactory = metadata.getSessionFactoryBuilder().build();
+
             } catch (Exception e) {
                 System.out.println("SessionFactory creation failed");
                 if (registry != null) {

@@ -73,7 +73,7 @@
                         <div class="text-xs py-1 px-2 leading-none dark:bg-gray-900 rounded-md">
                             <form action="refusFolder" method="post">
                                 <input name="id" value="1" type="hidden">
-                                <button type="submit" class="text-xs py-1 px-2 leading-none dark:bg-gray-900 bg-red-100 text-red-600 rounded-md">Check</button>
+                                <button type="submit" class="text-xs py-1 px-2 leading-none dark:bg-gray-900 bg-red-100 text-red-600 rounded-md">Refus</button>
                             </form>
                         </div>
                         <div class="ml-auto text-xs text-gray-500">en-cours</div>
