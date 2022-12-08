@@ -60,15 +60,6 @@ public class LoginController {
       return "login";
    }
 
-public List<Dossier> getPatientFolders() throws IOException {
 
-         Session session = null;
-         session = HibernateDatabaseConnection.getSessionFactory().openSession();
-        List<Dossier> q = (List<Dossier>) session.createQuery("FROM Dossier").getResultList().get(3);
-       // req.setAttribute("dossiers", q);
-      //  System.out.println(q.get(4));
-        return q;
-
-}
 
 }

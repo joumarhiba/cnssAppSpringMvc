@@ -1,7 +1,8 @@
 <%@ page import="com.cnss.controller.LoginController" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.cnss.model.Dossier" %>
-<%@ page import="com.cnss.model.Patient" %><%--
+<%@ page import="com.cnss.model.Patient" %>
+<%@ page import="com.cnss.controller.PatientController" %><%--
   Created by IntelliJ IDEA.
   User: YC
   Date: 06/12/2022
@@ -35,7 +36,7 @@
                      </tr>
                      </thead>
                      <%
-                         LoginController loginController = new LoginController();
+                         PatientController loginController = new PatientController();
                          List<Dossier> dossiers = loginController.getPatientFolders();
                          for(Dossier dossier : dossiers){
                      %>

@@ -1,27 +1,19 @@
 package com.cnss.controller;
 
-import com.cnss.model.Agent;
+
 import com.cnss.model.Document;
 import com.cnss.model.Dossier;
 import com.cnss.model.Ordonnance;
 import com.cnss.spring.HibernateDatabaseConnection;
-import jakarta.persistence.Query;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.print.Doc;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-import java.text.*;
-import java.util.Date;
-import java.util.List;
-import java.util.Queue;
 
 @Controller
 @RequestMapping
