@@ -21,8 +21,14 @@ public class Patient {
     @Column(columnDefinition = "String default patient")
     private String role;
 
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.PERSIST)
     private List<Dossier> dossiers;
 
+    public Patient(int id, String email, String password, String role) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
 }
 

@@ -51,12 +51,6 @@ public class LoginController {
                case "agent":
                    return "Agent/dashboard";
                case "patient":
-                   Patient patient = (Patient) loginService.validateUser(email, hashedPassword, role);
-                   Session session = null;
-                   session = HibernateDatabaseConnection.getSessionFactory().openSession();
-                   List<Dossier> q = session.createQuery("FROM Dossier where patient=:patient").setParameter("patient", patient).getResultList();
-                   req.setAttribute("dossiers", q);
-                   System.out.println(q.get(4));
                    return "Patient/dashboard";
            }
        } else {
@@ -66,15 +60,14 @@ public class LoginController {
       return "login";
    }
 
-   @PostMapping("folders")
-public void getPatientFolders(HttpServletRequest req, HttpServletResponse res, @RequestParam("id") int id) throws IOException {
+public List<Dossier> getPatientFolders() throws IOException {
 
          Session session = null;
          session = HibernateDatabaseConnection.getSessionFactory().openSession();
-        List<Dossier> q = session.createQuery("FROM Dossier where patient=:patient").setParameter("patient", id).getResultList();
-       req.setAttribute("dossiers", q);
-        System.out.println(q.get(4));
-        res.sendRedirect("/login");
+        List<Dossier> q = (List<Dossier>) session.createQuery("FROM Dossier").getResultList().get(3);
+       // req.setAttribute("dossiers", q);
+      //  System.out.println(q.get(4));
+        return q;
 
 }
 
